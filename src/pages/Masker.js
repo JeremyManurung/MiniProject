@@ -3,8 +3,21 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import AOS from "aos";
 import "aos/dist/aos.css"
+import {gql, useQuery, useLazyQuery} from '@apollo/client';
+
+const GetData = gql`
+    query MyQuery {
+        maskerin {
+        id
+        nama
+        deskripsi
+    }
+}
+    `
 
 function Masker() {
+    const {data, loading, error} = useQuery(GetData)
+
     useEffect(() =>{
             AOS.init();
         })
@@ -25,7 +38,7 @@ function Masker() {
         </div>
 
         <div class="hero">
-        <div class="search-button"  data-aos="fade-right" data-aos-duration="1000">
+        <div class="search-button" data-aos="fade-up" data-aos-duration="1000">
         <input type="text" placeholder="Search" />
         <button className="btn btn-primary">Search</button>
         </div>

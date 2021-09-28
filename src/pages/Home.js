@@ -83,7 +83,7 @@ function Home() {
                     </div>
                 </div>
                 <div class="card two" data-aos="fade-up" data-aos-duration="1300">
-                    <img src="/assets/img/videocall.png" class=" cardtwoImg" alt="" data-aos="fade-up" data-aos-duration="1200"/>
+                    <img src="/assets/img/videocall.png" class="cardtwoImg" alt="" data-aos="fade-up" data-aos-duration="1200"/>
                     <div class="cardbgtwo"></div>
                     <div class="cardContent">
                         <h2>Lorem Bang</h2>
