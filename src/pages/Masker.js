@@ -44,10 +44,12 @@ function Masker() {
         </div>
         <div class="middle"> 
         <div class="container">
-        <div class="wrapper" data-aos="fade-up" data-aos-duration="1000">
+        {data.maskerin.map(()=>( 
+            
+            <div class="wrapper" data-aos="fade-up" data-aos-duration="1000">
             <img src="/assets/img/Masker Kain.jpg" alt=""/>
             <div class="content">
-                <span>Masker Kain</span>
+                <span>{data.nama}</span>
                 <p>Ini adalah masker kain yang biasa aj</p>
             </div>
             <div class="row">
@@ -56,6 +58,8 @@ function Masker() {
                 </div>
             </div>
         </div>
+
+        ))}
         <div class="wrapper" data-aos="fade-up" data-aos-duration="1000">
             <img src="/assets/img/Masker Kain.jpg" alt=""/>
             <div class="content">
