@@ -8,10 +8,10 @@ const Buttons = ({
     if (started) {
         return (
             <Fragment>
-                <Button variant="contained" color="default" onClick={handlePause} disableElevation>
+                <Button variant="contained" onClick={handlePause} disableElevation>
                     {paused ? "Pause" : "Resume"}
                 </Button>
-                <Button variant="contained" color="secondary" onClick={handleReset} disableElevation>
+                <Button color="white" variant="contained" onClick={handleReset} disableElevation>
                     Reset
                 </Button>
             </Fragment>
@@ -21,7 +21,7 @@ const Buttons = ({
     return (
         <Fragment>
             <Button variant="contained" color="primary" onClick={finished ? handleReset : handleStart} disableElevation>
-            {finished ? "Kembali" : "Start"}
+            {finished ? "Kembali" : "Mulai"}
             </Button>
         </Fragment>
     );

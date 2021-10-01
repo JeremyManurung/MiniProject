@@ -15,8 +15,8 @@ function Home() {
                 <h4>Masker.<span style={{color: '#e0501b'}}>In</span></h4>
             </div>
             <div class="links">
-                <a href="#" class="mainlink">Home</a>
-                <a href="#">Fitur</a>
+                <Link to="/" class="mainlink">Home</Link>
+                <Link to="/FiturHome">Fitur</Link>
                 <Link to="/Masker">Masker</Link>
                 <a href="#">Contact</a>
                 <a href="#">About</a>

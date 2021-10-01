@@ -12,17 +12,31 @@ function IsoManHome() {
             </div>
             <div class="links">
                 <Link to="/" class="mainlink">Home</Link>
-                <a href="#">Fitur</a>
+                <Link to="/FiturHome">Fitur</Link>
                 <Link to="/Masker">Masker</Link>
                 <a href="#">Contact</a>
                 <a href="#">About</a>
             </div>
+        </div>
 
-            <div>
-                <Link to="/IsoMan"><button>Isoman</button></Link>
+        <div class="kaki"></div>
+
+        <div class="heran">
+            <div class="bungkus1">
+            <h1 style={{textAlign:'center'}}>Isoman (Isolasi Mandiri)</h1>
+
+
+        <div class="tulisan">
+        <p style={{textAlign:'center'}}>Pada fitur Isoman ini adalah sebuah timer yang dimana akan menghitung mundur selama 14 hari, yang dimana akan berfungsi ketika 
+        menekan Button “Isoman”</p>
+        
+        <Link to="/IsoMan"><button>Isoman</button></Link>
+        </div>
+        </div>
+        </div>
+
+
             </div>
-        </div>
-        </div>
     )
 }
 

@@ -11,9 +11,10 @@ const GetData = gql`
         id
         nama
         deskripsi
+        foto
     }
 }
-    `
+`
 
 function Masker() {
     const {data, loading, error} = useQuery(GetData)
@@ -30,7 +31,7 @@ function Masker() {
             </div>
             <div class="links">
                 <Link to="/" class="mainlink">Home</Link>
-                <a href="#">Fitur</a>
+                <Link to="/FiturHome">Fitur</Link>
                 <Link to="/Masker">Masker</Link>
                 <a href="#">Contact</a>
                 <a href="#">About</a>
@@ -44,13 +45,13 @@ function Masker() {
         </div>
         <div class="middle"> 
         <div class="container">
-        {data.maskerin.map(()=>( 
-            
+
+        {data?.maskerin.map((maskerinQuery)=>( 
             <div class="wrapper" data-aos="fade-up" data-aos-duration="1000">
-            <img src="/assets/img/Masker Kain.jpg" alt=""/>
+            <img src={maskerinQuery.foto} alt=""/>
             <div class="content">
-                <span>{data.nama}</span>
-                <p>Ini adalah masker kain yang biasa aj</p>
+                <span>{maskerinQuery.nama}</span>
+                <p>{maskerinQuery.deskripsi}</p>
             </div>
             <div class="row">
                 <div class="buttons">

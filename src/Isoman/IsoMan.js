@@ -13,7 +13,7 @@ function IsoMan() {
             </div>
             <div class="links">
                 <Link to="/" class="mainlink">Home</Link>
-                <a href="#">Fitur</a>
+                <Link to="/FiturHome">Fitur</Link>
                 <Link to="/Masker">Masker</Link>
                 <a href="#">Contact</a>
                 <a href="#">About</a>

@@ -31,7 +31,7 @@ const Countdown = () => {
         setStarted(false);
         setPaused(false);
         setFinished(false);
-        setDays(0);
+        setDays(14);
         setHours(0);
         setMinutes(0);
         setSeconds(0);
@@ -152,7 +152,7 @@ const Countdown = () => {
                 />
                 {started ? (
                     <Grid item>
-                        <TimerIcon fontSize="large" style={{marginTop: 4}} />
+                    
                     </Grid>
                 ) : (
                     <Grid container justify="center" spacing={3}>

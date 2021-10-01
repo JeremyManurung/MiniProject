@@ -47,7 +47,7 @@ const Timer = ({
         <Fragment>
             <Grid item>
                 <Typography variant="h4">
-                    {days < 10 ? `0${days}` : days } : { hours < 10 ? `0${hours}` : hours } : { minutes < 10 ? `0${minutes}` : minutes } : { seconds < 10 ? `0${ seconds }` : seconds }
+                    {days < 10 ? `1${4}` : days } : { hours < 10 ? `0${hours}` : hours } : { minutes < 10 ? `0${minutes}` : minutes } : { seconds < 10 ? `0${ seconds }` : seconds }
                 </Typography>
             </Grid>
         </Fragment>

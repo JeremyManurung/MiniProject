@@ -13,5 +13,4 @@ const client = new ApolloClient({
       'x-hasura-admin-secret' : 'OZTuNmDpyRL9fCEds0Mor8VAboVqfWOGyTYqmZZcvqSaKGRuRrVRWUiJuywTKNXB'
   }
 });
-
 export default client
