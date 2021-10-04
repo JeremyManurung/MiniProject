@@ -8,7 +8,7 @@ function CuciTanganHome() {
         <div>
         <div class="nav">
             <div class="logo">
-                <h4>Masker.<span style={{color: '#e0501b'}}>In</span></h4>
+                <h4><Link to="/"><span style={{color:"black"}}>Masker.</span><span style={{color: '#e0501b'}}>In</span></Link></h4>
             </div>
             <div class="links">
                 <Link to="/" class="mainlink">Home</Link>

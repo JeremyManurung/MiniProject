@@ -17,17 +17,32 @@ const GetData = gql`
 `
 
 const GetDetailData = gql`
-    query MyQuery2($id: Int!) {
-    maskerin(where: {id: {_eq: $id}}) {
-        id
+    query MyQuery2($nama: name!) {
+    maskerin(where: {nama: {_eq: $nama}}) {
         foto
         nama
-}
-}
+    }
+    }
+
 `
 
 function Masker() {
-    const {data, loading, error} = useQuery(GetData)
+    const [testes ,{data, loading, error}] = useLazyQuery(GetDetailData)
+    const [tes,settes] = useState("");
+    function Tes(e) {
+        settes(
+            e.target.value
+        )
+        console.log(e.target.value)
+        // console.log("tes")
+    }
+
+        function Tes2(e) {
+        testes({
+            variables: {nama:e.target.value},
+        });
+        // console.log("tes")
+    }
     // const [search, setSearch] = useState('')
     // const [filteredData,setFilterdData] = useState([])
     // const [getDataMasker,{data, loading, error}] = useLazyQuery(GetDetailData)
@@ -44,13 +59,12 @@ function Masker() {
     // })
     // )
     // },[search, data])
-  
 
     return (
         <div>
         <div class="nav">
             <div class="logo">
-                <h4>Masker.<span style={{color: '#e0501b'}}>In</span></h4>
+                <h4><Link to="/"><span style={{color:"black"}}>Masker.</span><span style={{color: '#e0501b'}}>In</span></Link></h4>
             </div>
             <div class="links">
                 <Link to="/" class="mainlink">Home</Link>
@@ -63,8 +77,8 @@ function Masker() {
 
         <div class="hero">
         <div class="search-button" data-aos="fade-up" data-aos-duration="1000">
-        <input type="text" placeholder="Search" />
-        <button className="btn btn-primary">Search</button>
+        <input type="text" placeholder="Search" onChange={Tes} value={tes}/>
+        <button className="btn btn-primary" onClick={Tes2}>Search</button>
         </div>
         <div class="middle"> 
         <div class="container">
