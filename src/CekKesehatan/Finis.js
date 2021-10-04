@@ -1,5 +1,4 @@
 import React from "react";
-import "../App.css";
 import { useContext } from "react";
 import { penampungContext } from "./Penampung";
 import { Pertanyaan } from "./Pertanyaan";

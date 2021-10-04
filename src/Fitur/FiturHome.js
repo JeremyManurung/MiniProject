@@ -38,7 +38,7 @@ function FiturHome() {
         <div data-aos="fade-down" data-aos-duration="1000" class="fiturcontainer">
             <Carousel breakPoints={breakPoints}>
             <ItemStyle>Yuk Cuci Tangan
-                <button>Klik</button>
+                <Link to="/CuciTanganHome"><button>Klik</button></Link>
             </ItemStyle>
             <ItemStyle>Isoman
                 <Link to="/IsoManHome"> <button>Klik</button></Link>
