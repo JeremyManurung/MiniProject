@@ -1,5 +1,5 @@
 import React from 'react'
-import { useEffect } from 'react';
+import { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import AOS from "aos";
 import "aos/dist/aos.css"
@@ -16,12 +16,35 @@ const GetData = gql`
 }
 `
 
+const GetDetailData = gql`
+    query MyQuery2($id: Int!) {
+    maskerin(where: {id: {_eq: $id}}) {
+        id
+        foto
+        nama
+}
+}
+`
+
 function Masker() {
     const {data, loading, error} = useQuery(GetData)
+    // const [search, setSearch] = useState('')
+    // const [filteredData,setFilterdData] = useState([])
+    // const [getDataMasker,{data, loading, error}] = useLazyQuery(GetDetailData)
+    
 
     useEffect(() =>{
             AOS.init();
         })
+
+    // useEffect(() => {
+    // setFilterdData(
+    // data.filter( data1 =>{
+    // return data1.task.toLowerCase().includes( search.toLowerCase() )
+    // })
+    // )
+    // },[search, data])
+  
 
     return (
         <div>
@@ -55,85 +78,13 @@ function Masker() {
             </div>
             <div class="row">
                 <div class="buttons">
-                    <button>Read More</button>
+                    <Link to={"/MaskerDetail/" + maskerinQuery.id}><button>Read More</button></Link>
+                    {/* <Link to="/MaskerDetail/"><button>Read More</button></Link> */}
                 </div>
             </div>
         </div>
-
         ))}
-        <div class="wrapper" data-aos="fade-up" data-aos-duration="1000">
-            <img src="/assets/img/Masker Kain.jpg" alt=""/>
-            <div class="content">
-                <span>Masker Kain</span>
-                <p>Ini adalah masker kain yang biasa aj</p>
-            </div>
-            <div class="row">
-                <div class="buttons">
-                    <button>Read More</button>
-                </div>
-            </div>
         </div>
-        <div class="wrapper" data-aos="fade-up" data-aos-duration="1000">
-            <img src="/assets/img/Masker Kain.jpg" alt=""/>
-            <div class="content">
-                <span>Masker Kain</span>
-                <p>Ini adalah masker kain yang biasa aj</p>
-            </div>
-            <div class="row">
-                <div class="buttons">
-                    <button>Read More</button>
-                </div>
-            </div>
-        </div>
-        <div class="wrapper"data-aos="fade-right" data-aos-duration="1000">
-            <img src="/assets/img/Masker Kain.jpg" alt=""/>
-            <div class="content">
-                <span>Masker Kain</span>
-                <p>Ini adalah masker kain yang biasa aj</p>
-            </div>
-            <div class="row">
-                <div class="buttons">
-                    <button>Read More</button>
-                </div>
-            </div>
-        </div>
-        <div class="wrapper" data-aos="fade-up" data-aos-duration="1000">
-            <img src="/assets/img/Masker Kain.jpg" alt=""/>
-            <div class="content">
-                <span>Masker Kain</span>
-                <p>Ini adalah masker kain yang biasa aj</p>
-            </div>
-            <div class="row">
-                <div class="buttons">
-                    <button>Read More</button>
-                </div>
-            </div>
-        </div>
-        <div class="wrapper" data-aos="fade-left" data-aos-duration="1000">
-            <img src="/assets/img/Masker Kain.jpg" alt=""/>
-            <div class="content">
-                <span>Masker Kain</span>
-                <p>Ini adalah masker kain yang biasa aj</p>
-            </div>
-            <div class="row">
-                <div class="buttons">
-                    <button>Read More</button>
-                </div>
-            </div>
-        </div>
-        <div class="wrapper" data-aos="fade-up" data-aos-duration="1000">
-            <img src="/assets/img/Masker Kain.jpg" alt=""/>
-            <div class="content">
-                <span>Masker Kain</span>
-                <p>Ini adalah masker kain yang biasa aj</p>
-            </div>
-            <div class="row">
-                <div class="buttons">
-                    <button>Read More</button>
-                </div>
-            </div>
-        </div>
-    </div>
         </div>
         </div>
         </div>

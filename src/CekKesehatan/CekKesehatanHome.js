@@ -26,8 +26,9 @@ function CekKesehatanHome() {
             </div>
         </div>
 
-        <div className="App">
-        <h1>Quiz App</h1>
+        <div class="kakiCek"></div>
+        <div className="KesehatanStyle">
+        <h1>Pertanyaan</h1>
         <penampungContext.Provider
             value={{
             pertanyaanState,

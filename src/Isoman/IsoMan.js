@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom'
 function IsoMan() {
     return (
 
-    <div className="App">
+    <>
+   
         <div class="nav">
             <div class="logo">
                 <h4>Masker.<span style={{color: '#e0501b'}}>In</span></h4>
@@ -20,7 +21,11 @@ function IsoMan() {
             </div>
         </div>
 
-        <div style={{marginTop:'200px'}}>
+        
+        <div class="kaki"></div>
+        <div class="IsoMan">
+            <div class="IsoManBungkus">
+        <div>
         <Container maxWidth="xs">
         <Grid container direction="column" alignItems="center">
             <Grid item style={{marginBottom: 4}}>
@@ -32,7 +37,9 @@ function IsoMan() {
         </Grid>
         </Container>
         </div>
+        </div>
     </div>
+    </>
     );
 }
 
