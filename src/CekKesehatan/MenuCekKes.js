@@ -2,7 +2,9 @@ import { useContext } from "react";
 import {penampungContext} from "./Penampung"
 
 function MenuCekKes() {
-    const { pertanyaanState, setpertanyaanState, userName, setUserName } = useContext(
+
+    
+    const { pertanyaanState, setpertanyaanState, userName, setUserName} = useContext(
         penampungContext
     );
     return (
@@ -12,7 +14,7 @@ function MenuCekKes() {
             type="text"
             placeholder="Contoh. jeremy"
             onChange={(event) => {
-            setUserName(event.target.value);
+                setUserName(event.target.value);
             }}
         />
         <button

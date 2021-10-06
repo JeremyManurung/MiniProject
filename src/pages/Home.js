@@ -27,6 +27,11 @@ function Home() {
             <div class="landingText" data-aos="fade-up" data-aos-duration="1000">
                 <h1>Masker.<span style={{color:'#e0501b'}}>In</span> </h1>
                 <h3>Lorem Ipsum is simply dummy text of the printing <br/>  and typesetting industry. Lorem Ipsum</h3>
+                <div class="containerIcon">
+                <a href="#" class="landingIcon"><i class='bx bxl-facebook' ></i></a>
+                <a href="#" class="landingIcon"><i class='bx bxl-instagram' ></i></a>
+                <a href="#" class="landingIcon"><i class='bx bxl-twitter' ></i></a>
+                </div>
             
             </div>
             <div class="landingImage" data-aos="fade-down" data-aos-duration="2000">
@@ -117,7 +122,28 @@ function Home() {
         </div>
 
         <div className="contact">
-            <h1 data-aos="fade-up" data-aos-duration="1000">Ini Contact</h1>
+            <div class="contactText" data-aos="fade-up" data-aos-duration="1000">
+                <h1>ABOUT</h1>
+                <span>Website ini untuk mengedukasi masyarakat tentang masker, jenis jenis masker <br/>
+                dan informasi lainnya tentang masker, dan dalam website ini juga menyajikan<br/>
+                beberapa fitur yang mungkin membantu masyarakat untuk lebih tau tentang <br/>
+                kesehatannya, cara cuci tangan yang benar serta waktu isolasi mandiri
+                </span>
+                <p style={{fontSize:"20px", marginBottom:"0",fontWeight:"bold"}}>Yuk lawan Covid</p>
+                <img data-aos="zoom-out" data-aos-duration="1000" src="/assets/img/lawan.png"/>
+            </div>
+
+            <div class="contact-right" data-aos="fade-down" data-aos-duration="1000">
+            <h1 style={{fontWeight:"600", fontSize:"3vw"}}>CONTACT</h1>
+            <b>Email : </b> <p>jetro00814@gmail.com</p>
+            <b>Sosial Media :</b><br/>
+            <div class="IconStyle">
+            <a href="#" class="ContactIcon"><i class='bx bxl-facebook' ></i></a>
+                <a href="#" class="ContactIcon"><i class='bx bxl-instagram' ></i></a>
+                <a href="#" class="ContactIcon"><i class='bx bxl-twitter' ></i></a>
+                <a href="#" class="ContactIcon"><i class='bx bxl-github' ></i></a>
+                </div>
+            </div>
         </div>
 
         <div class="footer">

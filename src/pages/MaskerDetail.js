@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css"
 import {gql, useQuery, useLazyQuery} from '@apollo/client';
 
 const GetDetailData = gql`
@@ -8,11 +10,17 @@ const GetDetailData = gql`
     maskerin(where: {id: {_eq: $id}}) {
         id
         foto
+        info_masker
         nama
+        detail_deskripsi
 }
 }
 `
 function MaskerDetail(props) {
+    
+    useEffect(() =>{
+            AOS.init();
+        })
     const [getDataMasker,{data, loading, error}] = useLazyQuery(GetDetailData)
 
     useEffect(() => {
@@ -38,9 +46,21 @@ function MaskerDetail(props) {
         </div>
 
             {data?.maskerin.map((detailmasker)=>(
-                <div class="MaskerDetail">
-                    <img src={detailmasker.foto} alt=""/>
+                <div class="MaskerDetail" data-aos="fade-up" data-aos-duration="1000">
                     <h1>{detailmasker.nama}</h1>
+                    <div class="hr2">
+                    <hr />
+                    </div>
+
+                    <img src={detailmasker.foto} alt=""/>
+
+                    <h2>Deskripsi</h2>
+                    <div class="hr1">
+                    <hr />
+                    </div>
+                    <p>{detailmasker.detail_deskripsi}</p>
+                    <iframe src={detailmasker.info_masker}></iframe>
+                    
                 </div>
             ))}
         </div>

@@ -1,9 +1,16 @@
 import React from 'react'
 import { useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css"
 import { Link } from 'react-router-dom';
 
 
 function CuciTanganHome() {
+    useEffect(() =>{
+        AOS.init();
+    })
+
+
     return (
         <div>
         <div class="nav">
@@ -21,14 +28,14 @@ function CuciTanganHome() {
 
         <div class="kakiCuci"></div>
 
-        <div class="heran">
+        <div class="heran" data-aos="fade-down" data-aos-duration="1000">
             <div class="bungkus1">
-            <h1 style={{textAlign:'center'}}>Isoman (Isolasi Mandiri)</h1>
+            <h1 style={{textAlign:'center'}}>Yuk Cuci Tangan</h1>
 
 
         <div class="tulisan">
-        <p style={{textAlign:'center'}}>Pada fitur Isoman ini adalah sebuah timer yang dimana akan menghitung mundur selama 14 hari, yang dimana akan berfungsi ketika 
-        menekan Button “Isoman”</p>
+        <p style={{textAlign:'center'}}>Yuk cuci tangan adalah fitur untuk mengetahui bagaimana melakukan cuci tangan dengan benar 
+        dan waktu yang tepat dalam melakukan cuci tangan</p>
         
         <Link to="/CuciTangan"><button>Cuci Tangan</button></Link>
         </div>

@@ -1,9 +1,16 @@
 import React from 'react'
 import { useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css"
+
 import { Link } from 'react-router-dom';
 
 
 function IsoManHome() {
+    useEffect(() =>{
+        AOS.init();
+    })
+
     return (
         <div>
         <div class="nav">
@@ -21,7 +28,7 @@ function IsoManHome() {
 
         <div class="kaki"></div>
 
-        <div class="heran">
+        <div class="heran" data-aos="fade-up" data-aos-duration="1000">
             <div class="bungkus1">
             <h1 style={{textAlign:'center'}}>Isoman (Isolasi Mandiri)</h1>
 
@@ -36,7 +43,7 @@ function IsoManHome() {
         </div>
 
 
-            </div>
+        </div>
     )
 }
 

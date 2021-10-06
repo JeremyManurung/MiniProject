@@ -1,6 +1,10 @@
 html,body{
     background-color: #fff;
-    font-family: 'Source Sans Pro',sans-serif;
+    font-family: "Roboto",
+    "Helvetica",
+    "Arial",
+    sans-serif;
+    ;
     overflow-x: hidden ;
     margin: 0px;
     padding: 0px ;
@@ -10,20 +14,72 @@ html,body{
     text-decoration: none ;
 }
 
+.ContactIcon{
+    font-size: 1.5rem;
+    color:black;
+}
+
+.landingIcon{
+    font-size: 2rem;
+    color:black;
+    padding-right: 10px;
+}
+
+.containerIcon{
+    margin-top: 20px;
+}
+
+.FinisScore{
+        margin:10% 0;
+        width: 500px;
+        height: 300px;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+}
+
 .MaskerDetail{
     border-radius: 10px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
     height: 104vh;
-    width: 100vh;
+    width: 85vh;
     margin: 15% auto 5% auto;
     background-color: white;
+    padding: 60px;
     
+}
+
+.MaskerDetail h2{
+    margin: 0;
+}
+
+.hr1 hr{
+    background-color: #D1C4E9;
+    border: 1px solid #D1C4E9;
+    width: 120px;
+    margin: 0;
+}
+
+.hr2 hr {
+    background-color: #D1C4E9;
+    border: 1px solid #D1C4E9;
+    width: 120px;
+}
+
+.MaskerDetail h1{
+    text-align: center;
+    margin-bottom: -5px;
 }
 
 .MaskerDetail img{
     width: 50%;
     display: block;
     margin: 0 auto;
+    padding: 30px;
 }
 
 .Loading{
@@ -83,6 +139,31 @@ html,body{
     text-align: center;
 }
 
+.CuciTanganContent p {
+    font-size: 15px;
+    text-align: center;
+    padding: 25% 0 0 0;
+}
+
+.CuciTanganContent button{
+        float: right;
+        background:#D1C4E9;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin: 25px;
+        padding: 5px;
+        cursor: pointer;
+}
+
+.CuciTanganContent h2{
+    text-align: right;
+    font-size: 20px;
+    cursor: pointer;
+    padding-right: 20px;
+    color: #808080;
+}
+
 .CuciTangan{
     padding: 150px 0px 51px 30%;
     position: absolute;
@@ -90,14 +171,22 @@ html,body{
 }
 
 .KesehatanStyle {
-    padding: 20px 0 0 30%;
-    text-align: center;
-    font-family: arial;
+    margin: 15% auto 0 auto;
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: white;
+    position: relative;
+    box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    position: absolute;
+    text-align: center;
+}
+
+.KesehatanStyle h1{
+    color: black;
 }
 
 .MenuKes {
@@ -106,7 +195,6 @@ html,body{
     height: 300px;
     border-radius: 10px;
     background-color: white;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -136,16 +224,29 @@ html,body{
 }
 
 .pertanyaan {
-    margin:10% 0;
+    margin: 0% 0 10% 0;
     width: 500px;
     height: 300px;
     border-radius: 10px;
     background-color: white;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.pertanyaan button{
+            width: 100px;
+            height: 50px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+}
+
+.pertanyaan h1{
+    text-align:center;
+    font-size: 20px;
 }
 
 
@@ -155,11 +256,28 @@ html,body{
     height: 300px;
     border-radius: 10px;
     background-color: white;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.Finis button{
+                width: 150px;
+                height: 50px;
+                margin: 5px;
+                border: none;
+                border-radius: 5px;
+                font-size: 20px;
+}
+
+.Finis h1 {
+    text-align: center;
+    font-size: 20px;
+}
+
+.Finis h3{
+    color: black;
 }
 
 #nextQuestion {
@@ -237,9 +355,21 @@ h3 {
     padding: 30px;
 }
 
+.IsoManTypoGraph{
+    padding-top: 20px;
+}
+
+.IsoManCount{
+    padding-top: 20px;
+}
+
 .IsoMan{
     position:absolute;
     padding: 15% 0 0 31%;
+}
+
+.IsoManButton {
+    padding-top: 20px;
 }
 
 .isomanContainer{
@@ -543,17 +673,31 @@ li span{
     margin-right: 20px;
 }
 
-.bannerImg img{
-    width: 20vw;
-}
-
 .contact {
     height: 400px;
     display: flex;
     flex-direction: row;
     padding: 50px;
-    justify-content: space-evenly;
-    align-items: center;
+    align-items: baseline;
+    justify-content: space-around;
+    gap: 3%;
+    background-color:#D1C4E9;
+}
+
+.IconStyle{
+    padding-top: 20px;
+}
+
+
+.contactText img {
+    width: 16vw;
+    margin-right: 20px;
+}
+
+.contactText h1{
+    font-size: 3vw;
+    color: #000;
+    font-weight: 600;
 }
 
 .footer{

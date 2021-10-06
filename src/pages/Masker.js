@@ -15,50 +15,41 @@ const GetData = gql`
     }
 }
 `
-
 const GetDetailData = gql`
-    query MyQuery2($nama: name!) {
-    maskerin(where: {nama: {_eq: $nama}}) {
+    query MyQuery($nama: name!) {
+    maskerin(where: {nama: {_gt: $nama}}) {
         foto
         nama
     }
-    }
-
+}
 `
 
 function Masker() {
-    const [testes ,{data, loading, error}] = useLazyQuery(GetDetailData)
-    const [tes,settes] = useState("");
-    function Tes(e) {
-        settes(
-            e.target.value
-        )
-        console.log(e.target.value)
-        // console.log("tes")
-    }
-
-        function Tes2(e) {
-        testes({
-            variables: {nama:e.target.value},
-        });
-        // console.log("tes")
-    }
-    // const [search, setSearch] = useState('')
-    // const [filteredData,setFilterdData] = useState([])
-    // const [getDataMasker,{data, loading, error}] = useLazyQuery(GetDetailData)
+    const {data, loading, error} = useQuery(GetData)
+    // const [testes ,{data, loading, error}] = useLazyQuery(GetDetailData)
+    // const [tes,settes] = useState("");
     
+    // function Tes(e) {
+    //     settes(
+    //         e.target.value
+    //     )
+    //     console.log(e.target.value)
+    //     // console.log("tes")
+    // }
+
+    //     function Tes2() {
+    //     testes({
+    //         variables: {nama: tes},
+    //     });
+    //     // console.log("tes")
+    // }
+
+    console.log(data)
+    // const [search, setSearch] = useState('')
 
     useEffect(() =>{
             AOS.init();
         })
-
-    // useEffect(() => {
-    // setFilterdData(
-    // data.filter( data1 =>{
-    // return data1.task.toLowerCase().includes( search.toLowerCase() )
-    // })
-    // )
-    // },[search, data])
 
     return (
         <div>
@@ -77,8 +68,10 @@ function Masker() {
 
         <div class="hero">
         <div class="search-button" data-aos="fade-up" data-aos-duration="1000">
-        <input type="text" placeholder="Search" onChange={Tes} value={tes}/>
-        <button className="btn btn-primary" onClick={Tes2}>Search</button>
+        {/* <input type="text" placeholder="Search" onChange={Tes} value={tes}/>
+        <button className="btn btn-primary" onClick={Tes2}>Search</button> */}
+        <input type="text" placeholder="Search"/>
+        <button className="btn btn-primary" >Search</button> 
         </div>
         <div class="middle"> 
         <div class="container">

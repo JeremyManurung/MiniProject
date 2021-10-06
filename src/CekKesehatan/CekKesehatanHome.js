@@ -1,15 +1,58 @@
 import MenuCekKes from "./MenuCekKes"
 import Soal from "./Soal"
 import Finis from "./Finis"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {penampungContext} from "./Penampung"
 import { Link } from 'react-router-dom';
+import AOS from "aos";
+import "aos/dist/aos.css"
 import { Pertanyaan } from "./Pertanyaan";
+import {gql, useQuery, useLazyQuery,useMutation} from '@apollo/client';
+
+
+// const getData = gql`
+//     query MyQuery {
+//     kesehatan {
+//         id
+//         nama_user
+//     }
+// }
+// `
+
+// const masukkanUser = gql`
+// mutation MyMutation( $nama: name!, $id: Int!) {
+//     insert_kesehatan(objects: {nama_user: $nama, id: $id}) {
+//         returning {
+//             id
+//             nama_user
+//         }
+//         }
+//     }
+
+// `
 
 function CekKesehatanHome() {
+    useEffect(() =>{
+        AOS.init();
+    })
+    // const [insertDataN, {loading:loadingInsert}] = useMutation(masukkanUser, {
+    //     refetchQueries: [getData]
+    // });
     const [pertanyaanState, setpertanyaanState] = useState("menu");
     const [userName, setUserName] = useState("");
     const [score, setScore] = useState(0);
+
+    //     const namaUser = newUser => {
+    //     // console.log(newUser.nama)
+    //     const newData = {
+    //         ...newUser
+    //     }
+    //     // console.log(newData)
+    //     insertDataN({variables :{
+    //           id: newData.id,
+    //           nama: newData.nama,
+    //     }})
+    // }
 
     return (
         <div>
@@ -27,8 +70,9 @@ function CekKesehatanHome() {
         </div>
 
         <div class="kakiCek"></div>
-        <div className="KesehatanStyle">
-        <h1>Pertanyaan</h1>
+        <div className="KesehatanStyle" data-aos="fade-down" data-aos-duration="1000">
+        <h1>Cek Kesehatan</h1>
+        
         <penampungContext.Provider
             value={{
             pertanyaanState,
@@ -39,9 +83,12 @@ function CekKesehatanHome() {
             setScore,
             }}
         >
+            
             {pertanyaanState === "menu" && <MenuCekKes />}
             {pertanyaanState === "mulai" && <Soal />}
-            {pertanyaanState === "finis" && <Finis />}
+            {pertanyaanState === "finis" && <Finis />}<br/>
+            {userName}
+            
         </penampungContext.Provider>
         </div>
         </div>

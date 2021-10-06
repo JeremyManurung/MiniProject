@@ -1,7 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"
 import { Link } from "react-router-dom";
+import CuciCountDown from "./CuciCountDown";
 
 export default function CuciTangan() {
+    useEffect(() =>{
+            AOS.init();
+        })
+
     const [page, setPage] = useState(1);
     const [data, setData] = useState({
     user: {},
@@ -40,15 +47,17 @@ export default function CuciTangan() {
             </div>
         </div>
 
-    <div className="CuciTangan">
-      {/* progres bar */}
+    <div className="CuciTangan" data-aos="fade-left" data-aos-duration="1000">
+    {/* progres bar */}
     {/* <div>
         <progress max="8" value={page} />
     </div> */}
 
       {/* konten */}
     <div class="CuciTanganContent">
-        {page === 1 && <OnboardingOne data={data.user} update={updateData} />}
+        {page === 1 &&(
+            <OnboardingOne data={data.user} update={updateData} 
+        />)}
         {page === 2 && (
             <OnboardingTwo data={data.profile} update={updateData} />
         )}
@@ -72,7 +81,7 @@ export default function CuciTangan() {
         {page === 8 && <OnboardingEight/>}
         </div>
 
-    {page !== 8 && <button onClick={goNextPage}>Melewatkan</button>}
+    {page !== 8 && <h2 onClick={goNextPage}>Melewatkan</h2>}
     {page === 8 && (
         <Link to="/"><button type="submit" onClick={submit}>
             Home
@@ -87,11 +96,13 @@ export default function CuciTangan() {
 
 function OnboardingOne({ data, update }) {
     const newData = {};
-
     return (
     <div>
         <img src="/assets/Gif/Cuci-tangan-1.gif"/>
         <h1>Ratakan Sabun Dengan Menggosok Kedua Tangan</h1>
+        <h1><CuciCountDown
+            duration={5}
+        /></h1>
     </div>
 
     );
@@ -101,6 +112,9 @@ function OnboardingTwo({ data, update }) {
     return <div>
     <img src="/assets/Gif/Cuci-tangan-2.gif"/>
     <h1>Menggosok Kedua  Punggung Tangan Secara Bergantian</h1>
+    <h1><CuciCountDown
+            duration={5}
+        /></h1>
     </div>;
 }
 
@@ -108,6 +122,9 @@ function OnboardingThree({ data, update }) {
     return <div>
     <img src="/assets/Gif/Cuci-tangan-3.gif"/>
     <h1>Gosok Sela - Sela Jari Tangan</h1>
+    <h1><CuciCountDown
+            duration={5}
+        /></h1>
     </div>;
 }
 
@@ -115,6 +132,9 @@ function OnboardingFour({ data, update }) {
     return <div>
     <img src="/assets/Gif/Cuci-tangan-4.gif"/>
     <h1>Gosok Bagian Dalam Jari Dengan Posisi Jari Tangan<br/> Saling Menungunci</h1>
+    <h1><CuciCountDown
+            duration={5}
+        /></h1>
     </div>;
 }
 
@@ -122,6 +142,9 @@ function OnboardingFive({ data, update }) {
     return <div>
     <img src="/assets/Gif/Cuci-tangan-5.gif"/>
     <h1>Gosok dan Putar Ibu Jari Bergantian</h1>
+    <h1><CuciCountDown
+            duration={5}
+        /></h1>
     </div>;
 }
 
@@ -129,6 +152,9 @@ function OnboardingSix({ data, update }) {
     return <div>
     <img src="/assets/Gif/Cuci-tangan-6.gif"/>
     <h1>Gosok Memutar Ujung Jari Secara Bergantian</h1>
+    <h1><CuciCountDown
+            duration={5}
+        /></h1>
     </div>;
 }
 
@@ -136,12 +162,15 @@ function OnboardingSeven({ data, update }) {
     return <div>
     <img src="/assets/Gif/Cuci-tangan-7.gif"/>
     <h1>Bilas Dengan Air Mengalir</h1>
+        <h1><CuciCountDown
+            duration={5}
+        /></h1>
     </div>;
 }
 
 function OnboardingEight({ data, update }) {
     return <div>
-    <h1>Yeyyyy akhirnya mencuci tangan dengan baik sudah berhasil<br/>tetap mencuci tangan ya dengan baik<br/>agar meminimaliris penularan covid 19,<br/>
-    <span>STAY SAFE</span></h1>
+    <p>Yeyyyy akhirnya mencuci tangan dengan baik sudah berhasil<br/>tetap mencuci tangan ya dengan baik<br/>agar meminimaliris penularan covid 19,<br/>
+    <span>STAY SAFE</span></p>
     </div>;
 }
