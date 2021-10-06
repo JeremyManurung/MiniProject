@@ -1,7 +1,6 @@
 import "../App.css";
 import { Pertanyaan } from "./Pertanyaan";
 import { useState } from "react";
-
 import { useContext } from "react";
 import {penampungContext} from "./Penampung";
 
@@ -31,6 +30,8 @@ function Soal() {
         setpertanyaanState("finis");
     };
 
+        
+    
     
 
     return (

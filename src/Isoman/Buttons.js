@@ -19,11 +19,14 @@ const Buttons = ({
     }
 
     return (
+        <div className="IsoManButton">
         <Fragment>
-            <Button variant="contained" color="primary" onClick={finished ? handleReset : handleStart} disableElevation>
+            <Button variant="contained" color="primary" 
+            onClick={finished ? handleReset : handleStart} disableElevation>
             {finished ? "Kembali" : "Mulai"}
             </Button>
         </Fragment>
+        </div>
     );
 };
 
