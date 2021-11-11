@@ -3,7 +3,6 @@ import {penampungContext} from "./Penampung"
 
 function MenuCekKes() {
 
-    
     const { pertanyaanState, setpertanyaanState, userName, setUserName} = useContext(
         penampungContext
     );

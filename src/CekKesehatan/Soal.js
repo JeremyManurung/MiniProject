@@ -30,10 +30,6 @@ function Soal() {
         setpertanyaanState("finis");
     };
 
-        
-    
-    
-
     return (
         
         <div className="pertanyaan">

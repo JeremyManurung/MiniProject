@@ -4,31 +4,96 @@ import "aos/dist/aos.css"
 import { Link } from "react-router-dom";
 import CuciCountDown from "./CuciCountDown";
 
-export default function CuciTangan() {
+function CuciTangan() {
     useEffect(() =>{
             AOS.init();
-        })
+    })
 
     const [page, setPage] = useState(1);
-    const [data, setData] = useState({
-    user: {},
-    profile: {},
-    settings: {}
-    });
 
     function goNextPage() {
     if (page === 8) return;
     setPage((page) => page + 1);
     }
 
-    function updateData(type, newData) {
-    setData((data) => {
-    return { ...data, [type]: newData };
-    });
+    function OnboardingOne() {
+    return (
+    <div>
+        <img src="/assets/Gif/Cuci-tangan-1.gif"/>
+        <h1>Ratakan Sabun Dengan Menggosok Kedua Tangan</h1>
+        <h1><CuciCountDown
+            duration={5}
+        /></h1>
+    </div>
+
+    );
     }
 
-    function submit() {
-    return "yes selesai"
+    function OnboardingTwo() {
+        return <div>
+        <img src="/assets/Gif/Cuci-tangan-2.gif"/>
+        <h1>Menggosok Kedua  Punggung Tangan Secara Bergantian</h1>
+        <h1><CuciCountDown
+                duration={5}
+            /></h1>
+        </div>;
+    }
+
+    function OnboardingThree() {
+        return <div>
+        <img src="/assets/Gif/Cuci-tangan-3.gif"/>
+        <h1>Gosok Sela - Sela Jari Tangan</h1>
+        <h1><CuciCountDown
+                duration={5}
+            /></h1>
+        </div>;
+    }
+
+    function OnboardingFour() {
+        return <div>
+        <img src="/assets/Gif/Cuci-tangan-4.gif"/>
+        <h1>Gosok Bagian Dalam Jari Dengan Posisi Jari Tangan<br/> Saling Menungunci</h1>
+        <h1><CuciCountDown
+                duration={5}
+            /></h1>
+        </div>;
+    }
+
+    function OnboardingFive() {
+        return <div>
+        <img src="/assets/Gif/Cuci-tangan-5.gif"/>
+        <h1>Gosok dan Putar Ibu Jari Bergantian</h1>
+        <h1><CuciCountDown
+                duration={5}
+            /></h1>
+        </div>;
+    }
+
+    function OnboardingSix() {
+        return <div>
+        <img src="/assets/Gif/Cuci-tangan-6.gif"/>
+        <h1>Gosok Memutar Ujung Jari Secara Bergantian</h1>
+        <h1><CuciCountDown
+                duration={5}
+            /></h1>
+        </div>;
+    }
+
+    function OnboardingSeven() {
+        return <div>
+        <img src="/assets/Gif/Cuci-tangan-7.gif"/>
+        <h1>Bilas Dengan Air Mengalir</h1>
+            <h1><CuciCountDown
+                duration={5}
+            /></h1>
+        </div>;
+    }
+
+    function OnboardingEight() {
+        return <div>
+        <p>Yeyyyy akhirnya mencuci tangan dengan baik sudah berhasil<br/>tetap mencuci tangan ya dengan baik<br/>agar meminimaliris penularan covid 19,<br/>
+        <span>STAY SAFE</span></p>
+        </div>;
     }
 
     return (
@@ -48,33 +113,31 @@ export default function CuciTangan() {
         </div>
 
     <div className="CuciTangan" data-aos="fade-left" data-aos-duration="1000">
-    {/* progres bar */}
-    {/* <div>
-        <progress max="8" value={page} />
-    </div> */}
 
       {/* konten */}
     <div class="CuciTanganContent">
         {page === 1 &&(
-            <OnboardingOne data={data.user} update={updateData} 
+        <OnboardingOne 
         />)}
+
         {page === 2 && (
-            <OnboardingTwo data={data.profile} update={updateData} />
+        <OnboardingTwo/>
         )}
+        
         {page === 3 && (
-            <OnboardingThree data={data.settings} update={updateData} />
+        <OnboardingThree />
         )}
         {page === 4 &&(
-        <OnboardingFour data={data.settings} update={updateData} />
+        <OnboardingFour />
         )}
         {page === 5 && (
-        <OnboardingFive data={data.settings} update={updateData} />
+        <OnboardingFive />
         )}
         {page === 6 && (
-        <OnboardingSix data={data.settings} update={updateData} />
+        <OnboardingSix />
         )}
         {page === 7 &&(
-        <OnboardingSeven data={data.settings} update={updateData} />
+        <OnboardingSeven />
         )}
 
         <div class="CuciDelapan">
@@ -83,7 +146,7 @@ export default function CuciTangan() {
 
     {page !== 8 && <h2 onClick={goNextPage}>Melewatkan</h2>}
     {page === 8 && (
-        <Link to="/"><button type="submit" onClick={submit}>
+        <Link to="/"><button type="submit" >
             Home
         </button></Link>
     )}
@@ -94,83 +157,4 @@ export default function CuciTangan() {
 );
 }
 
-function OnboardingOne({ data, update }) {
-    const newData = {};
-    return (
-    <div>
-        <img src="/assets/Gif/Cuci-tangan-1.gif"/>
-        <h1>Ratakan Sabun Dengan Menggosok Kedua Tangan</h1>
-        <h1><CuciCountDown
-            duration={5}
-        /></h1>
-    </div>
-
-    );
-}
-
-function OnboardingTwo({ data, update }) {
-    return <div>
-    <img src="/assets/Gif/Cuci-tangan-2.gif"/>
-    <h1>Menggosok Kedua  Punggung Tangan Secara Bergantian</h1>
-    <h1><CuciCountDown
-            duration={5}
-        /></h1>
-    </div>;
-}
-
-function OnboardingThree({ data, update }) {
-    return <div>
-    <img src="/assets/Gif/Cuci-tangan-3.gif"/>
-    <h1>Gosok Sela - Sela Jari Tangan</h1>
-    <h1><CuciCountDown
-            duration={5}
-        /></h1>
-    </div>;
-}
-
-function OnboardingFour({ data, update }) {
-    return <div>
-    <img src="/assets/Gif/Cuci-tangan-4.gif"/>
-    <h1>Gosok Bagian Dalam Jari Dengan Posisi Jari Tangan<br/> Saling Menungunci</h1>
-    <h1><CuciCountDown
-            duration={5}
-        /></h1>
-    </div>;
-}
-
-function OnboardingFive({ data, update }) {
-    return <div>
-    <img src="/assets/Gif/Cuci-tangan-5.gif"/>
-    <h1>Gosok dan Putar Ibu Jari Bergantian</h1>
-    <h1><CuciCountDown
-            duration={5}
-        /></h1>
-    </div>;
-}
-
-function OnboardingSix({ data, update }) {
-    return <div>
-    <img src="/assets/Gif/Cuci-tangan-6.gif"/>
-    <h1>Gosok Memutar Ujung Jari Secara Bergantian</h1>
-    <h1><CuciCountDown
-            duration={5}
-        /></h1>
-    </div>;
-}
-
-function OnboardingSeven({ data, update }) {
-    return <div>
-    <img src="/assets/Gif/Cuci-tangan-7.gif"/>
-    <h1>Bilas Dengan Air Mengalir</h1>
-        <h1><CuciCountDown
-            duration={5}
-        /></h1>
-    </div>;
-}
-
-function OnboardingEight({ data, update }) {
-    return <div>
-    <p>Yeyyyy akhirnya mencuci tangan dengan baik sudah berhasil<br/>tetap mencuci tangan ya dengan baik<br/>agar meminimaliris penularan covid 19,<br/>
-    <span>STAY SAFE</span></p>
-    </div>;
-}
+export default CuciTangan

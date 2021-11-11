@@ -15,6 +15,7 @@ const GetData = gql`
     }
 }
 `
+
 const GetDetailData = gql`
     query MyQuery($nama: name!) {
     maskerin(where: {nama: {_gt: $nama}}) {

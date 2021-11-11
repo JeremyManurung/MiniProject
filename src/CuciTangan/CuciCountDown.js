@@ -18,7 +18,6 @@ export default class CuciCountDown extends React.Component {
         }, 1000)
     }
 
-    //berhenti ke 0
     componentDidUpdate(prevState) {
         if (prevState.count !== this.state.count && this.state.count === 0) {
             clearInterval(this.timer);
@@ -27,8 +26,7 @@ export default class CuciCountDown extends React.Component {
 
     TimeCount(s) { 
         return (
-            s - (s %= 60)) / 60 + (9 < s ? ':' : ':0'
-        ) + s 
+            s - (s %= 60)) / 60 + (5 < s ? ':' : ':0') + s 
     }
 
     render() {
